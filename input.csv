@@ -1,0 +1,77 @@
+Parameter Name,Parameter Value,Full Description
+# >>> Simulation-level Parameter Values <<<,,(Note: rows beginning with # are ignored)
+INITIAL_SEED,3993489,Initial seed to the random number generator
+MAX_SIMULATED_TIME,365*1,Length of simulation in days
+NUM_ROWS,50,Number of rows in the sponge host environment
+NUM_COLS,50,Number of columns in the sponge host environment
+NUM_LEVELS,10,Number of levels in the sponge host environment
+GRID_TYPE,square,Shape of grid used to model the sponge host environment (one of 'square' or 'hex') 
+NUM_INITIAL_SYMBIONTS,23750,Number of initial symbionts present at the start of the simulation
+INITIAL_PLACEMENT,vertical,Placement of initial symbionts in host (one of 'randomize' 'horizontal' or 'vertical')
+HOST_CELL_DEMAND,1.0,Amount of photosynthate demanded by host cell (units per day)
+HCD_FUZZ,0.01,"Percentage used to randomly ""fuzz"" each host cell demand (see rng.py)"
+AVG_TIME_BETWEEN_ARRIVALS,1/12.0,Average time between extracellular symbionts arriving (in days) --- e.g. 1/12.0 is 12 symbionts/day
+NUM_CLADES,2,Number of algal clades in the simulation
+CLADE_PROPORTIONS,"(0.5,0.5)",The starting proportion (for prob of arrival) between the clades in the pool -- must sum to 1.0
+POPULATION_FILENAME,output/num/numSymbiontsPerDay_3993489.txt,Filename containing time-series population output
+WRITE_CSV_INFO,False,Whether to write per-symbiont information into separate CSV file -- LARGE FILES!
+CSV_FILENAME,output/csv/perSymbiont_3993489.csv,Filename for CSV file containing per-symbiont information
+WRITE_LOGGING_INFO,FALSE,Whether to write per-event logging information (True/False) -- VERY LARGE FILES!
+LOG_FILENAME,log.txt,Filename of logging info file to be written
+PRINT_PARAMETER_VALUES,False,Whether to print all of these parameter values at simulation start
+,,
+# >>> Clade 1 Parameter Values <<<,,
+CLADE_NUMBER,1,Index (sequential) of this clade
+ARRIVAL_AFFINITY_PROB,1.0,Probability of this clade having successful phagocytosis on arrival from the pool
+DIVISION_AFFINITY_PROB,1.0,Probability of this clade having successful phagocytosis on division (mitosis)
+PHOTOSYNTHETIC_PRODUCTION_RATE,1.2125,Baseline photosynthetic production rate (units per day) for this clade
+MITOTIC_COST_RATE,35,"Baseline mitotic cost rate for this clade (units per day, not units per mitosis)"
+AVG_RESIDENCE_TIME,58.0,Average length of stay (days) before denouement
+G0_LENGTH,13.0,Average length of G0 for this clade (days)
+G1SG2M_LENGTH,1/12.0,Average length of G1/S/G2/M for this clade (days)
+G0_ESCAPE_PROB,0.5,Probability a symbiont of this clade will escape if digestion is imminent during G0
+G1SG2M_ESCAPE_PROB,0.5,Probability a symbiont of this clade will escape if digestion is imminent during G1SG2M
+PARENT_EVICTION_PROB,0.5,Probability that upon mistosis the parent (rather than child) will be evicted from the current cell
+PHOTOSYNTHETIC_REDUCTION,1.0,Denominator k in linear decrease from ppr/1 in top row to ppr/k in bottom row (1 is no reduction)
+INITIAL_SURPLUS_SHAPE,2.0,Shape parameter for gamma distribution used to model initial photosynthate surplus (on arrival)
+INITIAL_SURPLUS_SCALE,0.75,Scale parameter for gamma distribution used to model initial photosynthate surplus (on arrival)
+MAX_INITIAL_SURPLUS,4.0,Maximum possible initial photosynthate surplus (on arrival)
+PHENOTYPIC_MUTATION_PROB,0,Probability that a symbiont arriving via mitosis undergoes a phenotypic mutation (likely values are 10^-6 or 10^-7)
+DELETERIOUS_PROB,2/3,Probability that a mutation is deleterious (rather than beneficial)
+BENEFICIAL_SHAPE,2.0,Shape parameter for gamma distribution used to model a beneficial mutation
+BENEFICIAL_SCALE,1/1.795,Scale parameter for gamma distribution used to model a beneficial mutation
+DELETERIOUS_SHAPE,2.0,Shape parameter for gamma distribution used to model a deleterious mutation
+DELETERIOUS_SCALE,1/0.83915,Scale parameter for gamma distribution used to model a deleterious mutation
+RESIDENCE_FUZZ,0.05,"Percentage used to randomly ""fuzz"" residence time (time until denouement)"
+G0_FUZZ,0.10,"Percentage used to randomly ""fuzz"" each time spent in G0"
+G1SG2M_FUZZ,0.25,"Percentage used to randomly ""fuzz"" each time spent in G1SG2M"
+PPR_FUZZ,0,"Percentage used to randomly ""fuzz"" each symbiont's PPR relative to baseline PPR"
+MCR_FUZZ,0,"Percentage used to randomly ""fuzz"" each symbiont's MCR relative to baseline MCR"
+,,
+# >>> Clade 2 Parameter Values <<<,,
+CLADE_NUMBER,2,Index (sequential) of this clade
+ARRIVAL_AFFINITY_PROB,1.0,Probability of this clade having successful phagocytosis on arrival from the pool
+DIVISION_AFFINITY_PROB,1.0,Probability of this clade having successful phagocytosis on division (mitosis)
+PHOTOSYNTHETIC_PRODUCTION_RATE,1.15,Baseline photosynthetic production rate (units per day) for this clade
+MITOTIC_COST_RATE,24.0,"Baseline mitotic cost rate for this clade (units per day, not units per mitosis)"
+AVG_RESIDENCE_TIME,58.0,Average length of stay (days) before denouement
+G0_LENGTH,13.0,Average length of G0 for this clade (days)
+G1SG2M_LENGTH,1/12.0,Average length of G1/S/G2/M for this clade (days)
+G0_ESCAPE_PROB,0.5,Probability a symbiont of this clade will escape if digestion is imminent during G0
+G1SG2M_ESCAPE_PROB,0.5,Probability a symbiont of this clade will escape if digestion is imminent during G1SG2M
+PARENT_EVICTION_PROB,0.5,Probability that upon mistosis the parent (rather than child) will be evicted from the current cell
+PHOTOSYNTHETIC_REDUCTION,1.0,Denominator k in linear decrease from ppr/1 in top row to ppr/k in bottom row (1 is no reduction)
+INITIAL_SURPLUS_SHAPE,2.0,Shape parameter for gamma distribution used to model initial photosynthate surplus (on arrival)
+INITIAL_SURPLUS_SCALE,0.75,Scale parameter for gamma distribution used to model initial photosynthate surplus (on arrival)
+MAX_INITIAL_SURPLUS,4.0,Maximum possible initial photosynthate surplus (on arrival)
+PHENOTYPIC_MUTATION_PROB,0,Probability that a symbiont arriving via mitosis undergoes a phenotypic mutation (likely values are 10^-6 or 10^-7)
+DELETERIOUS_PROB,2/3,Probability that a mutation is deleterious (rather than beneficial)
+BENEFICIAL_SHAPE,2.0,Shape parameter for gamma distribution used to model a beneficial mutation
+BENEFICIAL_SCALE,1/1.795,Scale parameter for gamma distribution used to model a beneficial mutation
+DELETERIOUS_SHAPE,2.0,Shape parameter for gamma distribution used to model a deleterious mutation
+DELETERIOUS_SCALE,1/0.83915,Scale parameter for gamma distribution used to model a deleterious mutation
+RESIDENCE_FUZZ,0.05,"Percentage used to randomly ""fuzz"" residence time (time until denouement)"
+G0_FUZZ,0.10,"Percentage used to randomly ""fuzz"" each time spent in G0"
+G1SG2M_FUZZ,0.25,"Percentage used to randomly ""fuzz"" each time spent in G1SG2M"
+PPR_FUZZ,0,"Percentage used to randomly ""fuzz"" each symbiont's PPR relative to baseline PPR"
+MCR_FUZZ,0,"Percentage used to randomly ""fuzz"" each symbiont's MCR relative to baseline MCR"
